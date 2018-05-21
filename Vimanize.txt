@@ -1,0 +1,208 @@
+ctrl K
+bind-key T swap-window -t 0
+
+https://github.com/VundleVim/Vundle.vim
+
+https://github.com/tpope/vim-pathogen
+
+http://vim.wikia.com/wiki/Example_vimrc
+
+https://github.com/dougblack/dotfiles/blob/master/.vimrc
+
+https://github.com/LukeSmithxyz/voidrice/blob/master/.vimrc
+
+https://github.com/altercation/solarized
+
+https://github.com/altercation/Vim-colors-solarized
+
+https://dougblack.io/words/a-good-vimrc.html
+
+https://duckduckgo.com/?q=vim+smooth+u+d+f+b&t=ffab&atb=v102-3_g&ia=web
+
+
+snippets:
+UltiSnips
+YouCompleteMe
+SnipMate
+
+
+" YouCompleteMe and UltiSnips compatibility, with the helper of supertab
+" (via http://stackoverflow.com/a/22253548/1626737)
+let g:SuperTabDefaultCompletionType    = '<C-n>'
+let g:SuperTabCrMapping                = 0
+let g:UltiSnipsExpandTrigger           = '<tab>'
+let g:UltiSnipsJumpForwardTrigger      = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger     = '<s-tab>'
+let g:ycm_key_list_select_completion   = ['<C-j>', '<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-k>', '<C-p>', '<Up>']
+
+I eventually scrapped the vim-snippets package in my configuration and started from scratch, slowly adding snippets as needed. I still look at the vim-snippets repo as a source of inspiration.
+
+
+
+
+
+
+
+
+
+
+https://stackoverflow.com/questions/1276403/simple-vim-commands-you-wish-youd-known-earlier
+
+https://stackoverflow.com/questions/9047107/navigating-between-vim-windows-in-an-alternative-way#9047241
+
+You can open files via ftp with the built-in netrw plugin, see :help netrw.
+
+
+Ctrl-C instead of ESC to exit out of inset mode!i <<<< 
+
+
+zz, zt, zb - position cursor at middle, top, or bottom of screen
+
+
+gi switches to insertion mode placing the cursor at the same location it was previously.
+
+ZZ (works like :wq)
+
+
+set scrolloff=9999
+
+Press ma (m- mark, a - name of mark). Later to return to the position type `a
+
+
+    ^wi: Jump to the tag under the cursor by splitting the window.
+    cib/ciB: Change the text inside the current set of parenthesis () or braces {}, respectively.
+    :set listchars=tab:>-,trail:_ list: Show tabs/trailing spaces visually different from other spaces. Helps a lot with Python coding.
+
+
+
+
+
+:shell to launch a shell console from Vim. Useful when for example you want to test a script without quitting Vim. Simply hit ^d when you done with the shell console, and then you come back to Vim and your edited file. 
+
+
+
+
+
+Add the following lines to $HOME\_vimrc to activate filetype detection and syntax highlighting:
+
+filetype plugin indent on
+syntax on
+
+
+
+
+https://gosukiwi.svbtle.com/vim-configuration-for-web-development
+
+
+https://gist.github.com/gosukiwi/080d1d3f87f861a15c44
+
+
+
+Powerline vs Lightline
+______________________
+https://github.com/itchyny/lightline.vim
+
+https://github.com/powerline/powerline
+
+
+
+
+
+
+https://stackoverflow.com/questions/11489428/how-to-make-vim-paste-from-and-copy-to-systems-clipboard#11489440
+
+
+
+http://vim.wikia.com/wiki/Accessing_the_system_clipboard
+
+
+
+
+
+
+function! s:goyo_enter()
+    colorscheme pencil
+endfunction
+
+function! s:goyo_leave()
+    colorscheme badwolf
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
+
+
+https://vi.stackexchange.com/questions/8116/truecolor-termguicolors-causes-display-issues-in-tmux
+
+
+
+
+https://stackoverflow.com/questions/1276403/simple-vim-commands-you-wish-youd-known-earlier
+
+select                                   v                                     
+select row(s)                            SHIFT + v                             
+select blocks (columns)                  CTRL  + v                             
+indent selected text                     >                                     
+unindent selected text                   <                                     
+list buffers                             :ls                                   
+open buffer                              :bN (N = buffer number)               
+print                                    :hardcopy                             
+open a file                              :e /path/to/file.txt                  
+                                         :e C:\Path\To\File.txt                
+sort selected rows                       :sort                                 
+search for word under cursor             *                                     
+open file under cursor                   gf                                    
+  (absolute path or relative)                                                  
+format selected code                     =                                     
+select contents of entire file           ggVG                                  
+convert selected text to uppercase       U                                     
+convert selected text to lowercase       u                                     
+invert case of selected text             ~                                     
+convert tabs to spaces                   :retab                                
+start recording a macro                  qX (X = key to assign macro to)       
+stop recording a macro                   q                                       
+playback macro                           @X (X = key macro was assigned to)    
+replay previously played macro *         @@                                    
+auto-complete a word you are typing **   CTRL + n                              
+bookmark current place in file           mX (X = key to assign bookmark to)    
+jump to bookmark                         `X (X = key bookmark was assigned to  
+                                             ` = back tick/tilde key)          
+show all bookmarks                       :marks                                
+delete a bookmark                        :delm X (X = key bookmark to delete)   
+delete all bookmarks                     :delm!                                 
+split screen horizontally                :split                                
+split screen vertically                  :vsplit                               
+navigating split screens                 CTRL + w + j = move down a screen     
+                                         CTRL + w + k = move up a screen       
+                                         CTRL + w + h = move left a screen     
+                                         CTRL + w + l = move right a screen    
+close all other split screens            :only                                 
+
+*  - As with other commands in vi, you can playback a macro any number of times.
+     The following command would playback the macro assigned to the key `w' 100
+     times: 100@w
+
+** - Vim uses words that exist in your current buffer and any other buffer you 
+     may have open for auto-complete suggestions.
+
+
+
+
+
+
+
+
+
+i3-gaps, NetworkManager,compton
+Terminal apps -- ranger, ncmpcpp, mpd, htop, weechat, neomutt, calcurse, newsbeuter, transmission-remote-cli, w3m, youtube-dl, ffmpeg, scrot
+Background stuff -- mpd, transmission
+Lightweight non-terminal apps -- mupdf, feh, rofi, network manager applet, arandr, mpv
+Big business programs -- qutebrowser, GIMP, Blender
+
+
+
+
+
+
