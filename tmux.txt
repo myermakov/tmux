@@ -1,0 +1,129 @@
+https://sanctum.geek.nz/arabesque/vi-mode-in-bash/
+
+
+https://tools.ietf.org/html/rfc1178
+
+todo look at timidgers dotfiles
+
+
+https://robots.thoughtbot.com/a-tmux-crash-course
+
+http://www.hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/
+
+tao
+https://leanpub.com/the-tao-of-tmux/read
+
+//// shared session
+chgrp
+777 all
+
+tmux new-session -s alice
+tmux new-session -t alice -s bob
+
+add group for tmux users
+export $TMUX_GROUP=tmux
+addgroup $TMUX_GROUP
+
+mkdir /var/tmux
+chgrp $TMUX_GROUP
+chmod g+ws /var/tmux
+
+usermod -aG $TMUX_GROUP user1
+usermod -aG $TMUX_GROUP user2
+
+
+////
+tmux -S /tmp/shareds new -s shared
+tmux -S /tmp/shareds attach -t shared
+
+
+/// tmux (cmpwn)
+
+bind-key v split-window -h -c "#{pane_current_path}"
+bind-key s split-window -v -c "#{pane_current_path}"
+bind-key h select-pane -L
+bind-key j select-pane -D
+bind-key k select-pane -U
+bind-key l select-pane -R
+bind-key t swap-window -t +1
+bind-key T swap-window -t -1
+
+set-option -sg escape-time 0
+set -s escape-time 0
+
+/// vim (cmpwn)
+plugins
+plasticboy/vim-markdown
+airblade/vim-gitgutter
+vim-scripts/SyntaxRange
+vim-scripts/ingo-library
+tpope/vim-dispatch
+kien/ctrlp.vim
+cespare/vim-toml
+rust-lang/rust.vim
+pangloss/vim-javascript
+tpope/vim-surround
+sirtaj/vim-openscad
+editorconfig/editorconfig-vim
+
+filetype plugin indent on
+set laststatus=2
+set t_Co=256
+
+set encoding=utf-8
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set autoindent
+set magic "for vim regex?
+
+set number
+set scrolloff=3
+set sidescroll=3
+set noesckeys "???
+
+set ruler
+set cc=80
+set nowrap " really?
+
+set ignorecase
+set smartcase
+
+"search as you type, highlight
+
+set incsearch
+set showmatch
+set hlsearch
+
+set mouse=a " move tabs with mouse
+
+set backupdir=~/.cache
+set directory=~/.cache "dont litter swp files
+
+set tags = ./tags
+
+syntax on
+
+
+let mapleader = "\<space>"
+
+nnoremap \\ :noh<cr> " clear highlighting
+
+nnoremap vs inoremap vs vnoremap
+
+inoremap C-c escape
+
+to be continued
+
+
+
+
+
+
+
+
+
+
+
+
+

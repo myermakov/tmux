@@ -1,0 +1,21 @@
+tmux new - s sessionname
+ctrl-b d
+tmux attach -t sesionname
+ctrl-b "
+ctrl-b %
+ctrl-b up right left down
+tmux.conf
+
+vim+tmux-navigator
+ctrl-lkjh < to slpit and navigate
+set -g default-terminal "screen-256color"
+tmux
+
+vims:
+https://github.com/amix/vimrc
+https://blog.bugsnag.com/tmux-and-vim/
+http://vim.wikia.com/wiki/Avoid_the_escape_key
+https://pragprog.com/book/bhtmux/tmux
+https://blog.bugsnag.com/benefits-of-using-tmux/
+http://vim.wikia.com/wiki/Open_vimrc_file
+
