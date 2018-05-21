@@ -1,0 +1,17 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+# User specific aliases and functions
+
+set -o vi
+
+alias pair="tmux -S /tmp/pair attach && chown proger:wheel /tmp/pair"
+alias repair="tmux -S /tmp/pair && chown proger:wheel /tmp/pair"
+alias ipython="ipython --TerminalInteractiveShell.editing_mode=vi"
