@@ -1,0 +1,59 @@
+*
+#
+%
+ctrl-O # jumplist/changelist
+ctrl-I
+
+ctrl ]
+ctrl J
+
+
+g; # jump through changes 
+g,
+
+:jumps
+:changes
+
+TODO: grok buffer-centric workflow
+
+tabs for window containers
+windows for buffer viewports
+buffers for file proxies
+
+buffers - 1to1 with file proxies
+more like a browsing history
+
+args are a stable subset of bufferlist - initial files supplied to vim
+
+:arga add filename to atr
+
+splits for buffer viewports
+ctrl w s - horizontal
+ctrl w v - vertical split
+ctrl w q - quit
+ctrl w w - alternate
+ctrl w r - rotate
+ctrl w x - toggle?
+
+:sf filename 
+:vert sf filename
+:find filename
+
+todo: learn file marks:
+V --> ctrl^
+
+:20vs . << dope!
+
+:vert sall << ??
+
+:vim /todo/ % (current file)
+:vim /todo/ ## (all arg list)
+
+
+OSC 52 !
+\e\e]52;c;(b64_data)\x07\e\\`
+
+
+:registers
+
+
